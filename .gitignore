@@ -1,0 +1,29 @@
+# ----- Python -----
+__pycache__/
+*.pyc
+
+# ----- Jupyter -----
+.ipynb_checkpoints/
+
+# ----- OS / editor -----
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ----- LaTeX build junk -----
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# ----- Data policy -----
+# Put raw data in data/raw/ but do NOT track it by default
+data/raw/
+
+# ----- Outputs -----
+output/

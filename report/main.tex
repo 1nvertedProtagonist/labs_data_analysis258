@@ -1,0 +1,432 @@
+
+\documentclass[letterpaper,12pt]{article}
+\usepackage{journal-template}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+
+%------- page header/footer formatting -----------
+%          Do not change
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+
+
+%------- Title page   -----------
+%        Modify as needed
+\title{Investigating the Photoelectric Effect}
+\author[1]{Bogdan-Vladimir Damian}
+\author[1]{Ari Polterovich}
+\author[1]{Justine Thebault-Weiser}
+\affil[1]{McGill University Physics Department, 3600 Rue University, H3A 2T8 Montréal, Canada}
+\date{January 21st 2026}                    
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
+
+
+
+
+\begin{document}
+\maketitle %Automatically generated the title page
+
+
+%------- Abstract -----------
+%        Modify as needed
+\begin{abstract}
+
+\vspace{0.2cm}
+{\it Maximum 250 words. Times New Roman 12 pt. font.}\\
+
+
+The aim of this experiment was to verify the wave-particle dual nature of light using a photodiode tube (PT) experimental setup. Relationships between the stopping voltage and wavelength of incident light, between the photocurrent and the area illuminated at the anode of the PT and between the photocurrent and the photon/electron flux density were all established successfully in a qualitative way. More rigorous data analysis tools and a better experimental setup will be required for a more certain quantitative conclusion. Values for Planck's constant and the work function of the metal in the PT tube were calculated, $6.9073 \cdot 10^{-34} \pm 6\cdot 10^{-38} Js$ and $2.6721 \cdot 10^{-19} \pm 4\cdot 10^-23 J$ respectively.  
+
+
+% In scientific journals, the Abstract is meant to tell a potential reader whether or not the article contains information worth reading in full. Therefore, the Abstract presents a comprehensive factual summary using a minimum number of words. This summary should include a short (i.e. 1 - 2 sentences!) description of: 
+%\item	what was done, 
+%\item	how it was done (experimental technique used with the relevant experimental conditions), 
+%\item	what were the final results (including the error estimate),
+%\item	what are the main conclusions (e.g., if the results are
+%consistent with a particular model, literature data, etc.). 
+%\end{enumerate}
+%It should be kept in mind that since the Abstract is read together with the title of the report any information given in the title need not be repeated in the Abstract.
+
+  
+\end{abstract}
+
+%--------------------------------------------------------
+
+\newpage %don't change, because abstract and title page don't count to page limit
+%thanks for that i didn't catch that at first
+
+\section{Introduction}
+%{\it Maximum 500 words. Times New Roman 12 pt. font.}\\
+Before Einstein's accepted justification of its dual wave-particle nature, light was thought to strictly be a transverse wave. The discovery of the photoelectric effect, and more specifically the discovery of light's disobedience to classical wave theory, left scientists perplexed and unable to develop a model that accounted for those findings.
+
+The photoelectric effect is a phenomenon that highlights the wave-particle duality of light. When incident light reaches a metal surface, its energy can be used to eject electrons from the metal by collision with a photon and create an electric current. However, the particular conditions for this current to be produced depend on the representation of light as wave-particle object.\cite{britannica}.
+
+Indeed, there are two hypotheses of what can occur in this experiment. The wave representation suggests that light's energy transfers are governed by time and intensity. The particle representation suggests that energy transferred from light instead depends exclusively on the wavelength. In this model, only the number of electrons emitted depends on the intensity of the light \cite{britannica}.
+
+Einstein's theory of the particle-like nature of light depends on the quantization of its energy, governed by the relation $E=hf$ \cite{quantum}. Here, $E$ is the energy of each photon (in Joules, $J$) reaching the metal surface, $h$ is Planck's constant (in Joules seconds, $Js$), and $f$ is the frequency (in$Hz$) of light. Equivalently, using $c = \lambda\:f$, where $\lambda$ is the wavelength, it can be expressed as:
+\begin{equation}
+    E=hf = \frac{hc}{\lambda}
+    \label{eq1}
+\end{equation}
+
+Given that a collision is an interaction of particulate nature, and will take place in the PT, which is an approximate vacuum with no external forces, after applying the conservation of energy and accounting for the metal's work function gives us:
+\begin{equation}
+    V = -\frac{hc}{q \;\lambda} + \frac{\phi}{q}
+    \label{eq2}
+\end{equation}
+Where $V$ (in Volts, $V$) is the stopping voltage to be applied so that no current flows, $q$ (in Coulombs, $C$) is the elementary charge and $\phi$ is the minimal energy required for an electron to be ejected from the surface of the metal (in $J$). This is also known as the work function of the metal \cite{quantum}.    
+
+Using a mercury vapor light source and a PT, we examined how the stopping voltage varied with the wavelength of the incident light,  how the photoelectric current varied with the illuminated area on the anode and with the photon/electron\footnote{Photon flux density and electron flux density are have interchangeable values, as every distinct photoelectric interaction (a single collision) involves exactly one photon and exactly one electron, so one's flux density is also the other's flux density.} flux density. Those three independent variables were varied by switching which light filter in position at the PT, by changing the circular aperture size on the apparatus by varying its diameter and by varying the distance to the light source respectively. The fine technicalities of factors impacting photocurrent are gone over in \ref{currexp}\footnote{Definitely refer to it, or chances are small that you will understand the methods section for second and third relationships}  
+
+By investigating the various relationships between different combinations of independent and dependent variables, we aimed to verify the predictions of the photoelectric effect and come up with an experimentally determined value for Planck's constant, $h$ done in \ref{planck}.
+
+The photoelectric effect has many applications in environmental and climate change science, communications technology, and health \cite{britannica}. As such, a good knowledge and understanding of this effect is essential to the study of physics.
+
+%-------------------------------------------------------------
+\section{Methods}
+%{\it Maximum 500 words. Maximum 2 Figures. Times New Roman 12 pt. font.}\\
+
+\begin{wrapfigure}{r}{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{../figures/phototelectric/Screenshot 2026-01-20 160454.png}
+    \caption{Photodiode Tube Internal Setup}
+    \label{fig:apparatus}
+\end{wrapfigure}
+
+The experimental setup used consisted of a mercury light source and a photodiode tube (PT), as shown in Figure \ref{fig:apparatus}. The PT was equipped with lenses almost allowing one wavelength\cite{LabManual2} to pass through: one of either 577 $nm$, 546 $nm$, 436 $nm$, 405 $nm$, 365 $nm$. Along with the lenses, there were three aperture sizes attached to the PT: 2$mm$, 4 $mm$ and 8 $mm$ in diameter. The light source was connected to a power supply on which the input voltage could be varied manually, and to a DC current amplifier. The light source and PT were held in place by a railed ruler.
+
+The first relationship (1) investigated was the effect of wavelength on the stopping voltage. The light source was first set and kept constant at a distance of 44 $cm$ from the PT. Both were locked to the rail at those distances, to ensure there would be no inadvertent changes to this value. Similarly, the aperture size of 8 $mm$ diameter was chosen.
+
+The PT lens was then set to 577$nm$ wavelength. The voltage was manually changed such that the current was as close to 0A as was achievable within reason. With this extremely sensitive equipment and conditions it was frankly impossible to manually adjust the voltage to keep the current within roughly $\pm 0.01$ mA of 0. This is a major source of error, that cannot be quantified or propagated. It is not a constant offset throughout the experiment, it is subject to unpredictable and sensitive environmental fluctuations.\footnote{mostly noise and presence of other influential electromagnetic fields from neighboring devices.} The stopping voltage was then recorded from the PASCO interface which had a sampling rate of 10 Hz. This process was repeated for each of the 5 wavelength lenses for 3 full runs. Equation \ref{eq2} would then be applied.    
+
+The second relationship (2) explored was between the illuminated area on the anode and the current created by the released electrons. This was investigated by changing the size of the circular aperture, while keeping the distance between light source and PT constant, as well as the wavelength of light (405 $nm$) being let through constant throughout the run. Another run was done with 436 $nm$ as the incident light. The voltage was set to a more or less constant value (-1V), and the current was recorded for each of the three aperture sizes. The purpose of the voltage constraint was that the hardware would max itself out when and no longer read valid measurements once the current got somewhere near 600 pico-amps. Again, this is obviously a source of error.
+
+The third (3) and final relationship explored was between the electron/photon flux density and the resulting photocurrent. This relationship was explored by varying the distance of the apparatus to the mercury light source, while keeping the aperture size and wavelength constant. 3 runs were performed and in every run 3 distances were taken, (24$cm$, 34$cm$ and 44$cm$ away), and then the same process was repeated with a different wavelength (405 $nm$ then 436$nm$ were done). Once again, that inherent source of error was present. 
+%-------------------------------------------------------------
+\section{Results}
+%{\it Maximum 500 words.  Use the \underline{minimum number} of Figures and Tables necessary to fully present your results. Times New Roman 12 pt. font.}\\
+
+As there were more than 8000 individual data points from the experiment, they are not transcribed here for brevity. Data processing was performed using Python and Jupyter software, and  analysis of the sources of error and uncertainties was conducted with techniques and notions from \cite{textbook1} and \cite{textbook2}. 
+
+Firstly, the experimental determination of the stopping potential was prioritized, given the expected results having a clear relationship. As this is the central result of this experiment, time was primarily focused on this component. Hence, three trials were taken for this independent variable to minimize the effect of random errors. For this component, the most significant error arose from the manual manipulation of the power supply to set the current as close to 0 as possible in order to find the stopping voltage. The data is shown below in Table \ref{table:stopping voltage results}. These mean values were used for subsequent calculations.
+
+\begin{table}[h]
+    \centering
+    \caption{Mean Stopping Voltage (V) for Each Input Wavelength (nm)}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Wavelength (nm) & Mean Stopping Voltage (V) & SEM $\pm$V & Residual (V)\\ \hline
+        577 & -0.6045 & 0.0001 & -0.0299   \\ \hline
+        546 & -0.7175 & 0.0001 & -0.0155   \\ \hline
+        436 & -1.2333 & 0.0001 & 0.0671  \\ \hline
+        405 & -1.476 & 0.0001 & 0.0516   \\ \hline
+        365 & -1.953 & 0.0001 & 0.0748   \\ \hline
+    \end{tabular}
+    \label{table:stopping voltage results}
+\end{table}
+
+To justify the number of raw data points to take for each trial, the team designed software to plot the standard error on the mean (SEM) as a function of the number of individual data points collected per trial. For almost every measured quantity and for almost every run, the SEM would stabilize at an acceptably low value after roughly 10 seconds of data recording. Therefore, each trial lasted about 10 seconds and had approximately 100 data points.
+
+The implications of the way too large residuals with respect to the sizes of the SEM bars will be dissected in the discussion section. 
+
+This data was then represented graphically in Figure \ref{fig:twoplots}. The reciprocal wavelength $\frac{1}{\lambda}$ was plotted against the stopping voltages $V$ as the theoretical model in Equation \ref{eq1} shows a proportionality between these two.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../figures/phototelectric/use/vols_inv_wl.png}
+    \label{fig:twoplots}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../figures/photoelectric/use/res_vols_inv_wls.png}
+    \caption{Plots for relationship between stopping voltage and incident beam wavelength}
+    \label{fig:twoplots}
+\end{figure}
+
+
+
+Then, the same data processing was performed to establish the relation between the photocurrent and intensity of light reaching the PT. This independent variable was changed both by the aperture size, whose results are shown in Table \ref{table:currarea}, and the distance between the PT and light source, shown in Table \ref{table:curr_dists_tab}. 
+
+\begin{table}[h]
+    \centering
+    \caption{Mean photocurrent (A) for Each Amount of Illuminated Area ($mm^2$)}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Area in $(mm)^2$ & Current (405 nm), $\pm$SEM (A) & Current 436 nm, $\pm$ SEM & Residual (405,436) (A) \\ \hline
+        $\pi$ & $1.2 \cdot 10^{-11} ,1\cdot 10^{-12}$ & $7 \cdot 10^{-12}, 1\cdot 10^{-12} $ & $-1.0 \cdot 10^{-12},-2 \cdot 10^{-12} $ \\ \hline
+        $4\pi$ & $4.7 \cdot 10^{-11}, 1\cdot 10^{-12}$ & $2.8\cdot 10^{-11},1 \cdot 10^{-12}$ & $1.3 \cdot 10^{-12}, 2.5 \cdot 10^{-12}$ \\ \hline
+        $16\pi$ & $1.8 \cdot 10^-10, 1\cdot 10^{-12}$ & $9.0 \cdot 10^{-11}, 1 \cdot 10^{-12}$ & $-3.2 \cdot 10^{-13}, -5.0 \cdot 10^{-13}$\\ \hline
+    \end{tabular}
+    \label{table:currarea}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \caption{Mean Photocurrent (A) for Each Distance Between PT and Light Source (cm)}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Distance to source (cm) & Current (405nm, 436nm) (A) & $\pm$ SEM\footnote{It just happens that the SEM for both beams is the same to 1 s.f.} (A) &  Residual (405 nm,436 nm) (A)\\ \hline
+        44 & $9.5 \cdot 10^{-11}, 5.6\cdot 10^{-11}$ & $1\cdot 10^{-12}$ & $4 \cdot 10^{-12}, -3 \cdot 10^{-12}$ \\ \hline
+        34 & $1.82\cdot 10^{-10},1.09 \cdot 10^{-10} $ & $ 1\cdot 10^{-12}$ & $-5 \cdot 10^{-12},4 \cdot 10^{-12}$\\ \hline
+        24 & $4.29 \cdot 10^{-10}, 2.19\cdot 10^{-10}$ & $1\cdot 10^{-12}$ & $2\cdot 10^{-12}$,$-1\cdot 10^{-12}$\\ \hline
+    \end{tabular}
+    \label{table:curr_dists_tab}
+\end{table}
+
+For both of these data sets, the graphical representation, shown in Figures \ref{fig: currareagr} and \ref{fig: currdist} was used to establish the correlation between the number of photons and current.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../figures/photoelectric/use/better_graphs/curr_area_405_436.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{..figures/photoelectric/use/better_graphs/res_curr_area_405_436.png}
+    \end{minipage}
+    \caption{Plots for relationship between photocurrent and illuminated area along with residuals}
+    \label{fig: currareagr}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{..figures/phototelectric/use/better_graphs/dists_curr_405_436.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{..figures/photoelectric/use/better_graphs/ress_dists_curr_405_436.png}
+    \end{minipage}
+    \caption{Plots for relationship between reciprocal of square of distance to light source and photocurrent along with residuals}
+    \label{fig: currdist}
+\end{figure}
+
+Finally, for all of the graphs shown in this section, the results from best fit analysis are reported in Table \ref{tab:fit_results} below.
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Relationship} & \textbf{Parameter} & \textbf{Value}  & \textbf{Error} 
+& $\boldsymbol{\chi^2_{\mathrm{red}}}$ & \textbf{$p$-value} \\
+\hline
+
+\multirow{2}{*}{Stopping Voltage and $\frac{1}{\lambda}$}
+  & $m$ & $-1.2951\cdot 10^{-6}$& $1\cdot10^{-10}$ & \multirow{2}{*}{450 000} & \multirow{2}{*}{$\approx0$} \\
+\cline{2-4}
+  & $b$ & 1.6700 & $3 \cdot 10^{-4}$ & & \\
+\hline
+
+\multirow{2}{*}{Current and Area}
+  & $m$ & $3.53 \cdot 10^{-12},1.74 \cdot 10^{-12}$ & $3 \cdot 10^{-14}$ & \multirow{2}{*}{2.8,10} & \multirow{2}{*}{0.093,0.001} \\
+\cline{2-4}
+  & $b$ & $1.7\cdot 10^{12},3.3\cdot 10^{-12}$ & $9 \cdot 10^{-13}$ & & \\
+\hline
+
+\multirow{2}{*}{Current and $\frac{1}{r^2}$}
+  & $m$ & $2.75 \cdot 10^{-7},1.32\cdot 10^{-7}$ & $1\cdot 10^{-9}$ & \multirow{2}{*}{47,23} & \multirow{2}{*}{$\approx0$} \\
+\cline{2-4}
+  & $b$ & $-5.1\cdot 10^{-11}, -9.4\cdot 10^{-11}$ & $1\cdot 10^{-11} $ & & \\
+\hline
+
+\end{tabular}
+\caption{Fit metrics for all established relationships (in case of an ordered pair, 405 nm first then 436 nm)}
+\label{tab:fit_results}
+\end{table}
+
+
+%-------------------------------------------------------------
+\section{Discussion}
+For Figure \ref{fig:twoplots}, an inverse linear relationship between the magnitude of the stopping voltage and wavelength can be clearly established. Indeed, the linear fit had a $R^2$ coefficient of $>0.98$. This is in agreement with Equation \ref{eq2}. Indeed, a higher incident energy of the photon leads to a higher kinetic energy of the expelled electron. Hence, a greater potential difference must be applied to halt this electron from travelling through the circuit.
+
+Furthermore, this relation gives insight into the work function of the specific metal, $\phi$. The y intercept is denoted as $\frac{\phi}{q}$ per Equation \ref{eq2}. Thus, the metal's work function from Figure \ref{fig:twoplots} is $2.6721\cdot 10^{-19} \pm 4\cdot 10^{-23} J$. This is of the correct magnitude of several electron volts \cite{quantum}. However, this result remains several times lower than that for metals such as aluminum and titanium. This result is $>10$ standard deviations away, suggesting that the uncertainties are either severely underestimated or the model being used is incorrect. 
+
+After performing calculations using reasoning depicted in Appendix \ref{planck}, our stated value for Planck's constant is $6.9073 \cdot 10^{-34} \pm 6 \cdot 10^{-38} Js$. Again, this is within the correct order of magnitude, but over 10 standard deviations away. This suggests that either our modeling is totally wrong, or that our uncertainties are extremely underestimated. 
+
+After conducting the statistical $\chi^2$ goodness-of-fit test and $p-\text{value}$, the results once more suggest the model being used is either a terrible fit, or the uncertainties are extremely underestimated. Similarly, the analysis of the residuals in the results section suggests this data is not sufficiently precise.
+
+After reflection, the linear model is not incorrect, but it is rather the uncertainties which cause this low statistical confidence. First, when the "stopping" voltage was applied, there was high amounts of error when determining a "0 current" value. That alone is a major unquantifiable systematic cause of error, particularly since this occurred throughout the experiment. Next, there should have been accountability for the uncertainty on the independent variable. The apparatus's filters should have been letting through almost monochromatic light \cite{LabManual2}. This would mean that the incident beam should have had some offset. This would have caused an uncertainty on x, which would then have been propagated through modeling and calculations \footnote{This would involve a modeling technique called Orthogonal distance regression, (ODR) \cite{textbook1}}. Note that that uncertainty was not given or found anywhere.
+
+Finally, for the relationship between intensity (illuminated area or distance between PT and light source), the statistical metrics indicate more favorable results to the methods used. These relationships, shown in Figures \ref{fig: currareagr} and \ref{fig: currdist} have $R^2$ values of $>0.98$. However, the uncertainties that are underestimated. Here, the largest cause of unaccounted systematic error is the voltage variation. The voltage should have remained constant, but the raw data shows there were fluctuations in the exact voltage. Hence, there was not any method of sufficiently ensuring this controlled variable was consistently fixed.
+
+Hence, qualitatively, the models proposed could be acceptable, as the data supports the linear models established in the Introduction. However, additional experimentation is required to solidify the conclusions made here and improve the statistical confidence. Beyond this, it would also be beneficial to use a more precise data supply apparatus, such that the voltage could be changed more precisely and such that it remains more stable with time.
+%{\it Maximum 500 words.  Use the \underline{minimum number} of Figures and Tables necessary to fully discuss your results. Times New Roman 12 pt. font.}\\
+
+%The Discussion evaluates whether or not the experiment objectives have been met (i.e. was the experiment a success) and what the results  actually mean. This portion of the report allows some freedom, but the purpose is to explain the significance/meaning of the results to the reader; i.e. to ``interpret'' the results.
+
+%In the discussion section, important features of the results should be highlighted. Comparison should be made with accepted values if relevant and available.  This comparison gives an estimate of the accuracy of the experiment and provides an opportunity to assess different methods (i.e. those you used and those others have used) and to comment on your error analysis. {\bf Do the results obtained in this experiment agree - within quoted uncertainty - of accepted values? If there is a discrepancy, by how many standard deviations?  Why?}
+
+%What (if any) is the theoretical significance of the results? The Discussion should include a clear, concise presentation of how the results demonstrate key concepts or impact on questions of theoretical importance.
+
+%{\bf Any direct questions asked of you in the lab manual should also be addressed in this section.}
+
+
+%-------------------------------------------------------------
+\section{Conclusions} %maximum 300 words
+%{\it Maximum 300 words. Times New Roman 12 pt. font.}\\
+
+This experiment successfully qualitatively confirmed the wave-particle nature of light using a PT and mercury light source. Three independent variables were tested: the wavelength of the incoming light, the area of the illuminated anode, and the electron/photon flux density. Finally, Planck's constant was experimentally determined with a value of $6.9073 \cdot 10^{-34} \pm 6 \cdot 10^{-38} Js$.
+
+The qualitative relationship between the wavelength and stopping potential was found to have a linear relationship with an $R^2$ value of $>0.98$. For the relationship between intensity and photocurrent, the $R^2$ value of $0.98$ also indicates a high correlation. However, other goodness-of-fit metrics (high $\chi^2$ and low $p-$value) suggest that it is either unlikely that the models are correct, or that there are likely errors unaccounted for. It was found that the second scenario is much more likely, given issues encountered with controlling variables and data collection methods.
+
+To expand on the research presented here, further experimentation is required to solidify the conclusions drawn here with more certainty. Additionally, the relationship between wavelength and photocurrent, as well as the relationship between intensity and the stopping potential would both be worthwhile explorations. Indeed, the predicted lack of relationship between these variables should be confirmed to verify all components of Einstein's model. Beyond this, additional testing with different types of metals would allow for an exploration of how the work function affects the variables explored in this paper.
+
+% In the Conclusion section, state the most important outcome of your work. Do not simply summarize the points already made in the body, instead, interpret your findings at a higher level of abstraction. Show whether, or to what extent, you have succeeded in addressing the need stated in the Introduction. At the same time, do not focus on yourself (for example, by restating everything you did). Rather, show what your findings mean to readers. Make the Conclusion interesting and memorable for them.
+
+% At the end of your Conclusion, consider including perspectives, that is, an idea of what could or should still be done in relation to the issue addressed in the paper. If you include perspectives, clarify whether you are referring to firm plans for yourself and your colleagues (``In the coming months, we will . . . ``) or to an invitation to readers (``One remaining question is . . . ``).
+
+\newpage
+
+%-------------------------------------------------------------
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{unsrt}
+\bibliography{MyBibliography}
+
+
+
+
+%-------------------------------------------------------------
+\section*{Author Contributions Statement}
+All authors participated in data collection. A.P. designed the experiment. B.V.D. performed data analysis in Python. J.T.W. wrote the Abstract, Introduction, Methods, and Conclusion sections. B.V.D. wrote the Results and Discussion sections. All authors reviewed the manuscript. 
+
+
+
+%-------------------------------------------------------------
+\newpage
+\appendix
+\renewcommand{\thesection}{Appendix \Alph{section}. }
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}. }
+
+
+
+\section{Full manipulation of conservation or energy equation}
+\label{conseng}
+
+The stopping voltage $V$ to be applied to an electron can be related to the required amount of kinetic energy $E$ required for it to stop, by its charge $q$ through \cite{quantum}:
+\begin{equation}
+    E=qV,
+    \label{qv}
+\end{equation}
+
+Starting from Equation \ref{eq1}, apply conservation of energy. On the left hand side is the energy of the incident photon, and on the right hand side is the energy of the ejected electron and the work function of the specific metal \cite{quantum}. 
+\begin{equation}
+    E_{\gamma}  = E_{e^-} + \phi
+\end{equation}
+
+Expanding the energy terms of the particles using \ref{eq1} and \ref{qv}: 
+\begin{equation}
+    \frac{hc}{\lambda} = Vq + \phi
+\end{equation}
+
+Our goal is to get to an equation for the stopping voltage, V. however, it is important to note that $q$ here is the elementary charge. But the particle in question is an electron, so a negative sign must also be applied to all terms involving $q$. Using consistent sign convention and solving for V gives back \ref{eq2}. 
+
+\begin{equation}
+    V = -\frac{hc}{q \;\lambda} + \frac{\phi}{q}
+    \label{eq2}
+\end{equation}
+
+\section{Full explanation of quantities that influence current}
+\label{currexp}
+From first principles, current, $I$, is simply the rate at which electrons flow through a certain cross-sectional area. It is expressed in Amperes, but fundamentally those are just Coulombs per second, $\frac{C}{s}$. This is an electric flux. Next, there is the notion of density of a flux, $B$, that is the flux passing through a unit area of a section. That is expressed as flux per unit area, $\frac{C}{s \cdot m^2}$. Next follows the notion of total area, $A$ subject to that flow of electrons (flux), measured in $m^2$. The following relationship is established from first principles: 
+\begin{equation}
+    I = B \cdot A
+\end{equation}
+The units check out, per $\frac{C}{s} =\frac{C}{s\cdot m^2} \cdot m^2 \xrightarrow{} \frac{C}{s} = \frac{C}{s}$. There are two ways to vary the current then. The first way, explored in relationship 2, was by varying the area subject to that constant flux density through the adjustment of the aperture size. The aperture is a small circle, and its diameter was given, so using the basic area of a circle equation, $A= \pi (\frac{d}{2})^2$, the equation describing the second investigated relationship is: 
+\begin{equation}
+     I = B \cdot \frac{d^2}{2^2} 
+     \label{rel2}
+\end{equation}
+That is why on x axis while investigating relationship 2, the independent variable was area illuminated at the anode of the photodiode tube, it's just that experimentally it was varied by changing aperture size.
+
+Next, the third relationship explored is how varying the electron flux density affected the current by varying the distance to the source. The mercury vapor lamp emission follows the classic wave nature of propagation. The perceived "intensity" of this light source varies is inversely proportional to the square of the distance to the source. Formally, the rate at which photons pass through a unit of a cross is inversely proportional to the sectional area is inversely proportional to the square of the distance from the source, hence the description $B \;\alpha \;\frac{1}{r^2}$, where $r$ is the distance from the source. The lamp could only provide a constant optical power, as we were not varying any of its electrical inputs or anything hardware related to it through the experiment, as as light waves propagate through space, the further they get from the source, the less "bright" they appear on a certain surface the further they get. 
+
+Think of it qualitatively as you being in a completely dark room, you shine a flashlight on a wall, observe how "bright" that spot on the wall is, then take a few steps back, and notice again how "bright" that spot became. You will also notice that the area on which the light from your flashlight is incident upon has also grown massively, and that can be explained by the fact that The area (units of meters squared) is proportional to the \textit{square} of the distance from source, so that the units make sense. Hence, the third relationship investigated can be described by: 
+\begin{equation}
+    I \; \alpha \;\frac{1}{r^2} \cdot \frac{d^2}{2^2}
+    \label{rel3}
+\end{equation}
+Where there is a constant with appropriate units relating the quantities, and that constant has things to do with the optical irradiance associated with the lamp and  electrical technicalities not in the scope of this report. Obviously while investigating this relationship, the aperture size was kept constant. 
+
+\section{Proof for Discarded Data}
+\label{discard}
+Here is the data from that specific run, where there were multiple fluctuations in sign and magnitude of current. Discard justification was made in the Results section, here we are just showing the raw materials. For full comparison with the other trials in that run, consult the co-submitted python code pdf to see how bad the magnitude of the SEM is relative to the mean measurement. Again, this decision was made following statistical analysis guidelines from \cite{textbook1} and \cite{textbook2}.
+
+\begin{figure} [H] 
+    \centering
+    \includegraphics[width=0.5\linewidth]{../figures/photoelectric/garbage1.png}
+    \caption{Raw data for that run plagued by scandalous and unexplainable variations}
+    \label{fig: garbage1}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{../figures/photoelectric/garbage2.png}
+    \caption{The variation of the SEM for total number of measurements for that run.}
+    \label{fig:garbage2}
+\end{figure}
+
+\section{Planck's constant experimental determination}
+\label{planck}
+Calculating Planck's can be done by taking Equation \ref{eq2} and equating coefficients for its slope (m) to solve for $h$:
+
+\begin{equation}
+    m= \frac{hc}{q}
+\end{equation}
+\begin{equation}
+    h =\frac{mq}{c}
+    \label{plackh}
+\end{equation}
+
+Where the only significant uncertainties are on the computed slope $m$, since the uncertainties on fundamental constants such as $q$ and $c$ get dominated. Applying the differential approach to error propagation for this Equation using \cite{textbook1}, the uncertainty on our experimental value for $h$ can be expressed as: 
+\begin{equation}
+    \alpha_{h} = |\frac{q}{c} \cdot\alpha_{m}|
+    \label{planckunc}
+\end{equation}
+By computations done in python, our value for Planck's constant is $h= 6.9073 \cdot 10^{-34} \pm 6 \cdot 10^{-38}$ Joule seconds. 
+
+
+\section{$R^2$ values}
+\label{$R^2$ values for relationships}
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{../figures/photoelectric/r1.png}
+    \caption{$R^2$}
+    \label{fig:r1}
+\end{figure}
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{../figures/photoelectric/r2.png}
+    \caption{$R^2$}
+    \label{fig:r2}
+\end{figure}
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{../figures/photoelectric/r3.png}
+    \caption{$R^2$}
+    \label{fig:r1}
+\end{figure}
+
+\end{document}sorry just want to visualize the pdf
+
